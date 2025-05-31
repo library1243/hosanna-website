@@ -1,0 +1,198 @@
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #f9f9f9;
+  margin: 0;
+  padding: 0;
+  color: #333;
+  line-height: 1.6;
+  animation: fadeIn 1.5s ease-in forwards;
+}
+
+nav {
+  background: #004080;
+  padding: 1em;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  animation: slideDown 0.8s ease forwards;
+}
+
+nav a {
+  color: white;
+  margin: 0 20px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.1em;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+nav a::after {
+  content: '';
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  bottom: -5px;
+  left: 0;
+  background-color: #ffa500; /* orange underline */
+  transition: width 0.3s ease;
+}
+
+nav a:hover {
+  color: #ffa500;
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+.hero {
+  background: url('image/images.jpg') no-repeat center center;
+  background-size: cover;
+  padding: 5em 2em;
+  color: white;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+
+.hero::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(128, 0, 55, 0.6);
+  z-index: 0;
+}
+
+.hero h1, .hero p {
+  position: relative;
+  z-index: 1;
+  animation: slideInFromLeft 1s ease forwards;
+}
+
+.hero h1 {
+  font-size: 3em;
+  margin: 0 0 0.5em 0;
+}
+
+.hero p {
+  font-size: 1.3em;
+  margin-top: 0;
+  font-weight: 300;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 2em auto;
+  padding: 0 1em;
+  background: white;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  border-radius: 8px;
+  animation: fadeIn 1.5s ease forwards;
+}
+
+h2, h3 {
+  color: #004080;
+  margin-bottom: 0.6em;
+}
+
+ul {
+  margin: 0 0 1.5em 1.2em;
+}
+
+footer {
+  text-align: center;
+  padding: 1.5em 1em;
+  background: #004080;
+  color: white;
+  margin-top: 3em;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  animation: fadeIn 2s ease forwards;
+}
+
+form input, form textarea {
+  width: 100%;
+  padding: 0.7em;
+  margin-bottom: 1.2em;
+  border: 2px solid #ddd;
+  border-radius: 6px;
+  font-size: 1em;
+  transition: border-color 0.3s ease;
+}
+
+form input:focus, form textarea:focus {
+  border-color: #004080;
+  outline: none;
+  box-shadow: 0 0 8px rgba(0, 64, 128, 0.4);
+}
+
+form button {
+  background: #004080;
+  color: white;
+  border: none;
+  padding: 0.8em 1.8em;
+  cursor: pointer;
+  border-radius: 6px;
+  font-size: 1.1em;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+form button:hover {
+  background: #ffa500;
+  transform: scale(1.05);
+}
+
+p a {
+  color: #004080;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+p a:hover {
+  color: #ffa500;
+  text-decoration: underline;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+@keyframes slideDown {
+  from {transform: translateY(-100%);}
+  to {transform: translateY(0);}
+}
+
+@keyframes slideInFromLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .hero h1 {
+    font-size: 2em;
+  }
+  .hero p {
+    font-size: 1em;
+  }
+  nav a {
+    margin: 0 10px;
+    font-size: 1em;
+  }
+}
+
